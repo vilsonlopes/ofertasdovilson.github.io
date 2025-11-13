@@ -4,11 +4,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ofertas do Vilson — Promoções do Dia</title>
+  <title>Ofertas do Vilson — Cupons e Promoções do Dia</title>
+
   <meta name="description"
-    content="As melhores promoções do Mercado Livre. Ofertas atualizadas diariamente em eletrônicos e produtos de beleza." />
+    content="Cupons de desconto e as melhores promoções do Mercado Livre. Ofertas atualizadas diariamente em eletrônicos e produtos de beleza." />
+  <meta name="theme-color" content="#0b0f14" />
+
+  <!-- Favicon simples em emoji -->
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>💥</text></svg>">
+
   <style>
     :root {
       --bg: #0b0f14;
@@ -21,28 +26,31 @@
     }
 
     * {
-      box-sizing: border-box
+      box-sizing: border-box;
     }
 
     html,
     body {
-      height: 100%
+      height: 100%;
     }
 
     body {
       margin: 0;
-      background: radial-gradient(1200px 600px at 10% -10%, rgba(0, 229, 255, .10), transparent 60%), radial-gradient(1000px 500px at 110% 10%, rgba(0, 200, 83, .10), transparent 60%), var(--bg);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(0, 229, 255, .10), transparent 60%),
+        radial-gradient(1000px 500px at 110% 10%, rgba(0, 200, 83, .10), transparent 60%),
+        var(--bg);
       color: var(--txt);
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, Arial, sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px
+      padding: 24px;
     }
 
     .wrap {
       width: 100%;
-      max-width: 780px
+      max-width: 780px;
     }
 
     .card {
@@ -51,14 +59,14 @@
       border-radius: 22px;
       padding: 28px;
       box-shadow: var(--shadow);
-      backdrop-filter: blur(6px)
+      backdrop-filter: blur(6px);
     }
 
     header {
       display: flex;
       align-items: center;
       gap: 16px;
-      margin-bottom: 12px
+      margin-bottom: 12px;
     }
 
     .logo {
@@ -70,24 +78,24 @@
       background: radial-gradient(80% 80% at 20% 20%, rgba(255, 214, 10, .45), rgba(255, 59, 59, .35));
       border: 1px solid rgba(255, 255, 255, .12);
       box-shadow: var(--shadow);
-      font-size: 30px
+      font-size: 30px;
     }
 
     h1 {
       font-size: 22px;
-      margin: 0
+      margin: 0;
     }
 
     .sub {
       color: var(--muted);
       margin-top: 4px;
-      font-size: 14px
+      font-size: 14px;
     }
 
     .grid {
       display: grid;
       gap: 12px;
-      margin-top: 18px
+      margin-top: 18px;
     }
 
     .btn {
@@ -103,49 +111,50 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: transform .06s ease, border-color .2s ease;
+      transition: transform .06s ease, border-color .2s ease, box-shadow .2s ease;
       background-blend-mode: overlay;
-      box-shadow: var(--shadow)
+      box-shadow: var(--shadow);
     }
 
     .btn:hover {
       transform: translateY(-1px);
-      border-color: rgba(255, 255, 255, .22)
+      border-color: rgba(255, 255, 255, .22);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
     }
 
     .row {
       display: flex;
       align-items: center;
-      gap: 12px
+      gap: 12px;
     }
 
     .emoji {
-      font-size: 20px
+      font-size: 20px;
     }
 
     .btn.primary {
-      background: linear-gradient(180deg, rgba(0, 200, 83, .35), rgba(0, 200, 83, .12))
+      background: linear-gradient(180deg, rgba(0, 200, 83, .35), rgba(0, 200, 83, .12));
     }
 
     .btn.info {
-      background: linear-gradient(180deg, rgba(0, 229, 255, .30), rgba(0, 229, 255, .10))
+      background: linear-gradient(180deg, rgba(0, 229, 255, .30), rgba(0, 229, 255, .10));
     }
 
     .btn.warn {
       background: linear-gradient(180deg, rgba(255, 214, 10, .30), rgba(255, 214, 10, .10));
-      color: #1f1600
+      color: #1f1600;
     }
 
     .sep {
       height: 1px;
       background: rgba(255, 255, 255, .06);
-      margin: 18px 0
+      margin: 18px 0;
     }
 
     .hint {
       font-size: 12px;
       color: var(--muted);
-      margin-top: 8px
+      margin-top: 8px;
     }
 
     footer {
@@ -155,13 +164,132 @@
       display: flex;
       justify-content: space-between;
       gap: 12px;
-      flex-wrap: wrap
+      flex-wrap: wrap;
     }
 
     .pill {
       border: 1px solid rgba(255, 255, 255, .12);
       padding: 6px 10px;
-      border-radius: 999px
+      border-radius: 999px;
+    }
+
+    /* --- BLOCO CUPOM DO DIA --- */
+
+    .coupon {
+      margin-top: 10px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: radial-gradient(120% 180% at 10% 0, #fff7c2, #ffd60a);
+      color: #1b1300;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0, 0, 0, .08);
+    }
+
+    .coupon-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .coupon-label {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .coupon-label span {
+      font-size: 15px;
+    }
+
+    .coupon-code {
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-weight: 800;
+      font-size: 16px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, .08);
+      border: 1px dashed rgba(0, 0, 0, .35);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .coupon-body {
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .coupon-body strong {
+      font-weight: 800;
+    }
+
+    .coupon-note {
+      font-size: 11px;
+      opacity: .8;
+    }
+
+    .coupon-actions {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .coupon-cta,
+    .coupon-copy {
+      border-radius: 999px;
+      border: none;
+      font-size: 12px;
+      padding: 7px 14px;
+      cursor: pointer;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .coupon-cta {
+      background: #111827;
+      color: #f9fafb;
+    }
+
+    .coupon-cta span {
+      font-size: 14px;
+    }
+
+    .coupon-copy {
+      background: rgba(0, 0, 0, .04);
+      color: #1b1300;
+      border: 1px solid rgba(0, 0, 0, .18);
+    }
+
+    .coupon-copy span {
+      font-size: 14px;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 16px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .coupon-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -170,15 +298,49 @@
   <main class="wrap">
     <section class="card">
       <header>
-        <div class="logo">💥</div>
+        <div class="logo" aria-hidden="true">💥</div>
         <div>
           <h1>Ofertas do Vilson</h1>
-          <div class="sub">Promoções atualizadas do Mercado Livre • Eletrônicos e Beleza</div>
+          <div class="sub">Cupons e promoções atualizadas do Mercado Livre • Eletrônicos e Beleza</div>
         </div>
       </header>
 
+      <!-- INÍCIO: BLOCO CUPOM DO DIA -->
+      <section class="coupon" aria-label="Cupom de desconto do dia">
+        <div class="coupon-top">
+          <div class="coupon-label">
+            <span>🎟️</span>
+            <span>CUPOM DO DIA</span>
+          </div>
+          <div class="coupon-code">
+            <span>VALEDESCONTOS</span>
+          </div>
+        </div>
+
+        <div class="coupon-body">
+          <strong>10% OFF</strong> em compras a partir de <strong>R$ 79</strong> no site,
+          com desconto máximo de <strong>R$ 60</strong>.
+          <div class="coupon-note">
+            💡 Alguns produtos podem não ser elegíveis. Vale testar o cupom na hora de fechar a compra.
+          </div>
+        </div>
+
+        <div class="coupon-actions">
+          <a class="coupon-cta" target="_blank" rel="noopener" href="https://mercadolivre.com/sec/2K4YxGj">
+            <span>🛒</span>
+            <span>Ver ofertas para usar o cupom</span>
+          </a>
+          <button class="coupon-copy" type="button" onclick="copyCoupon()">
+            <span>📋</span>
+            <span>Copiar código</span>
+          </button>
+        </div>
+      </section>
+      <!-- FIM: BLOCO CUPOM DO DIA -->
+
       <div class="grid">
-        <a class="btn btn-primary" href="https://whatsapp.com/channel/0029Vb7CvjFLikgA9ldXm41y" target="_blank" rel="noopener">
+        <a class="btn btn-primary" href="https://whatsapp.com/channel/0029Vb7CvjFLikgA9ldXm41y" target="_blank"
+          rel="noopener">
           🔔 Entrar no Canal de Ofertas no WhatsApp
         </a>
 
@@ -213,16 +375,31 @@
 
       <div class="sep"></div>
       <div class="hint">
-        🔥 Ofertas atualizadas todos os dias.<br>
+        🔥 Ofertas e cupons atualizados todos os dias.<br>
         🛡️ Pagamento e entrega 100% pelo Mercado Livre.<br>
-        💬 Precisa de ajuda? Fale comigo no WhatsApp.
+        💬 Precisa de ajuda para usar o cupom? Fale comigo no WhatsApp.
       </div>
       <footer>
         <span class="pill">© Ofertas do Vilson</span>
-        <span class="pill">Eletrônicos & Beleza</span>
+        <span class="pill">Eletrônicos &amp; Beleza</span>
       </footer>
     </section>
   </main>
+
+  <script>
+    function copyCoupon() {
+      const code = "VALEDESCONTOS";
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(function () {
+          alert("Cupom copiado: " + code);
+        }).catch(function () {
+          alert("Cupom: " + code);
+        });
+      } else {
+        alert("Cupom: " + code);
+      }
+    }
+  </script>
 </body>
 
 </html>
