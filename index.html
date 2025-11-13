@@ -10,7 +10,6 @@
     content="Cupons de desconto e as melhores promoções do Mercado Livre. Ofertas atualizadas diariamente em eletrônicos e produtos de beleza." />
   <meta name="theme-color" content="#0b0f14" />
 
-  <!-- Favicon simples em emoji -->
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>💥</text></svg>">
 
@@ -29,9 +28,8 @@
       box-sizing: border-box;
     }
 
-    html,
-    body {
-      height: 100%;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -42,15 +40,14 @@
         var(--bg);
       color: var(--txt);
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, Arial, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
+      min-height: 100vh;
     }
 
     .wrap {
       width: 100%;
       max-width: 780px;
+      margin: 16px auto 32px;
+      padding: 0 16px;
     }
 
     .card {
@@ -278,10 +275,6 @@
     }
 
     @media (max-width: 520px) {
-      body {
-        padding: 16px;
-      }
-
       .card {
         padding: 20px;
       }
